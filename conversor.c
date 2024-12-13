@@ -7,12 +7,7 @@
 void comprimento();
 void temperature();
 void area();
-
-int volume(){
-   //codigo
-   return 0;
-    
-}
+void volume();
 
 int main(){
     bool sair=false;
@@ -328,4 +323,119 @@ void area(){
         printf("Entre com qualquer tecla para retornar.\n"); // Adição de saída para melhorar interface.
         getchar();
         getchar();
+}
+
+void volume(){
+    int tipo, tipo2;
+    float volume;
+    
+    printf("digite a unidade para conversao\n");
+    printf("[1] para m3\n");
+    printf("[2] para dm3\n");
+    printf("[3] para cm3\n");
+    printf("[4] para mm3\n");
+    scanf("%d", &tipo);
+
+    printf("digite o volume\n");
+    scanf("%f", &volume);
+
+    printf("digite a unidade de saida\n");
+    printf("[1] para m3\n");
+    printf("[2] para dm3\n");
+    printf("[3] para cm3\n");
+    printf("[4] para mm3\n");
+    scanf("%d", &tipo2);
+
+    switch (tipo)
+    {
+    case 1: //m3
+        switch (tipo2)
+        {
+        case 1 :
+            printf("Em m3: %f\n",volume);
+            break;
+        case 2 :
+            printf("Em dm3: %.1f\n",(volume*10));
+            break;
+        case 3 :
+        printf("Em cm3: %.2f\n",(volume*100));
+            break;
+        case 4 :
+        ("Em mm3: %.3f\n",(volume*1000));
+            break;
+        default:
+            printf("Numero invalido.\n");
+            break;
+        }
+
+        break;
+    case 2: //dm3 
+         switch (tipo2)
+        {
+        case 1 :
+            printf("Em m3: %1f\n",(volume/10));
+            break;
+        case 2 :
+            printf("Em dm3: %.f\n",volume);
+            break;
+        case 3 :
+            printf("Em cm3: %.f\n",(volume*10));
+            break;
+        case 4 :
+            printf("Em mm3: %.2f\n",(volume*100));
+            break;
+        default:
+            printf("Numero invalido.\n");
+            break;
+        }  
+        break;
+    case 3: //cm3
+        switch (tipo2)
+        {
+        case 1 :
+            printf("Em m3: %.2f\n",(volume/100));
+            break;
+        case 2 :
+            printf("Em dm3: %.f\n",(volume/10));
+            break;
+        case 3 :
+            printf("Em cm3: %.f\n",volume);
+            break;
+        case 4 :
+            printf("Em mm3: %.f\n",(volume*10));
+            break;
+        default:
+            printf("Numero invalido.\n");
+            break;
+        }   
+        break;
+    case 4: //mm3
+        switch (tipo2)
+        {
+        case 1 :
+            printf("Em m3: %.3f\n",(volume/1000));
+            break;
+        case 2 :
+            printf("Em dm3: %.2f\n",(volume/100));
+            break;
+        case 3 :
+            printf("Em cm3: %.1f\n",(volume/10));
+            break;
+        case 4 :
+            printf("Em mm3: %.f\n",volume);
+            break;
+        default:
+            printf("Numero invalido.\n");
+            break;
+        }   
+        break;
+
+    default:
+        break;
+    }
+
+
+   
+   
+    
 }

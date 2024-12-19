@@ -3,6 +3,12 @@
 #include <stdbool.h>
 
 void comprimento();
+float celsios_to_fahrenheit(float temperature);
+float celsios_to_kelvin(float temperature);
+float fahrenheit_to_celsios(float temperature);
+float fahrenheit_to_kelvin(float temperature);
+float kelvin_to_celsios(float temperature);
+float kelvin_to_fahrenheit(float temperature);
 
 int volume(){
    //codigo
@@ -92,4 +98,34 @@ void comprimento(){
         break;
     }
     }while(repete==true);
+}
+
+// Converte de Celsios para Fahrenheit
+float celsios_to_fahrenheit(float temperature) {
+    return (temperature * 1.8) + 32;
+}
+
+// Converte de Celsios para Kelvin
+float celsios_to_kelvin(float temperature) {
+    return temperature + 273.15;
+}
+
+// Converte de Farenheit para Celsios
+float fahrenheit_to_celsios(float temperature) {
+    return (temperature - 32) / 1.8;
+}
+
+// Converte de Fahrenheit para Kelvin
+float fahrenheit_to_kelvin(float temperature) {
+    return ((temperature - 32) / 1.8) + 273.15;
+}
+
+// Converte de Kelvin para Celsios
+float kelvin_to_celsios(float temperature) {
+    return temperature - 273.15;
+}
+
+// Converte de Kelvin para Fahrenheit
+float kelvin_to_fahrenheit(float temperature) {
+    return ((temperature - 273.15) * 1.8) + 32;
 }

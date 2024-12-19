@@ -15,7 +15,7 @@ int main(){
     printf("Escolha o tipo de conversão que deseja fazer: \n");
     printf("[1] para conversao de volume\n");
     printf("[2] para conversao de comprimento\n");
-    printf("[3] para conversao de \n");
+    printf("[3] para conversao de área\n");
     printf("[4] para conversao de \n");
 
     scanf("%d",&esc);
@@ -29,7 +29,7 @@ int main(){
     break;
 
     case 3:
-    
+    area();
     break;
     
     case 4:
@@ -92,4 +92,47 @@ void comprimento(){
         break;
     }
     }while(repete==true);
+}
+
+void area(){
+    int in, out, dif;
+    unsigned int multi;
+    float valor, conv;
+        printf("\nEscolha a unidade de área de entrada:");
+        printf("\n[1] km²");
+        printf("\n[2] hm²");
+        printf("\n[3] dam²");
+        printf("\n[4] m²");
+        printf("\n[5] dm²");
+        printf("\n[6] cm²");
+        printf("\n[7] mm²\n");
+        scanf("\n%d", &in);
+        printf("\nInsira o valor da medida\n");
+        scanf("\n%f", &valor);
+
+        printf("\nEscolha a unidade de área de saída:");
+        printf("\n[1] km²");
+        printf("\n[2] hm²");
+        printf("\n[3] dam²");
+        printf("\n[4] m²");
+        printf("\n[5] dm²");
+        printf("\n[6] cm²");
+        printf("\n[7] mm²\n");
+        scanf("%d", &out);
+        dif = in-out;
+        multi = pow(100,fabs(dif));
+        if (dif<0)
+        {
+            conv = valor*multi;
+            printf("\nO valor é %f", conv);
+        }
+        if (dif>0)
+        {
+            conv = valor/multi;
+            printf("\nO valor é %f", conv);
+        }
+        if (dif=0)
+        {
+            printf("\nO valor é %f", valor);
+        }
 }

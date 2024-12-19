@@ -95,44 +95,49 @@ void comprimento(){
 }
 
 void area(){
-    int in, out, dif;
+    int in, out, dif, s;
     unsigned int multi;
     float valor, conv;
-        printf("\nEscolha a unidade de área de entrada:");
-        printf("\n[1] km²");
-        printf("\n[2] hm²");
-        printf("\n[3] dam²");
-        printf("\n[4] m²");
-        printf("\n[5] dm²");
-        printf("\n[6] cm²");
-        printf("\n[7] mm²\n");
-        scanf("\n%d", &in);
-        printf("\nInsira o valor da medida\n");
-        scanf("\n%f", &valor);
+        do{ // Adição de laço de repetição.
+            printf("\nEscolha a unidade de área de entrada:");
+            printf("\n[1] km²");
+            printf("\n[2] hm²");
+            printf("\n[3] dam²");
+            printf("\n[4] m²");
+            printf("\n[5] dm²");
+            printf("\n[6] cm²");
+            printf("\n[7] mm²\n");
+            scanf("\n%d", &in);
+            printf("Insira o valor de entrada:\n");
+            scanf("\n%f", &valor);
 
-        printf("\nEscolha a unidade de área de saída:");
-        printf("\n[1] km²");
-        printf("\n[2] hm²");
-        printf("\n[3] dam²");
-        printf("\n[4] m²");
-        printf("\n[5] dm²");
-        printf("\n[6] cm²");
-        printf("\n[7] mm²\n");
-        scanf("%d", &out);
-        dif = in-out;
-        multi = pow(100,fabs(dif));
-        if (dif<0)
-        {
-            conv = valor*multi;
-            printf("\nO valor é %f", conv);
-        }
-        if (dif>0)
-        {
-            conv = valor/multi;
-            printf("\nO valor é %f", conv);
-        }
-        if (dif=0)
-        {
-            printf("\nO valor é %f", valor);
-        }
+            printf("\nEscolha a unidade de área de saída:");
+            printf("\n[1] km²");
+            printf("\n[2] hm²");
+            printf("\n[3] dam²");
+            printf("\n[4] m²");
+            printf("\n[5] dm²");
+            printf("\n[6] cm²");
+            printf("\n[7] mm²\n");
+            scanf("%d", &out);
+            dif = in-out;
+            multi = pow(100,fabs(dif)); // Exclusão da variável conv para reduzir quantidade de variável.
+                if (dif<0){   
+                    printf("O valor convertido é %.4e\n.", valor*multi); // Alteração do formato para notação científica.        
+                }
+                if (dif>0){
+                    printf("O valor convertido é %.4e\n.", valor/multi);
+                }
+                if (dif==0){
+                    printf("O valor é %f\n.", valor*multi);
+                }
+                printf("Deseja realizar outra operação de conversão para área?\n");
+                printf("[1] Sim\n");
+                printf("[2] Não\n");
+                scanf("%d", &s);
+        } while (s==1);
+        
+        printf("Entre com qualquer tecla para retornar.\n"); // Adição de saída para melhorar interface.
+        getchar();
+        getchar();
 }

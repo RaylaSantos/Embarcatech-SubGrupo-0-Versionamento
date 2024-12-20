@@ -2,8 +2,10 @@
 #include <math.h>
 #include <stdbool.h>
 
+
 void comprimento();
 void temperature();
+void area();
 
 int volume(){
    //codigo
@@ -12,45 +14,48 @@ int volume(){
 }
 
 int main(){
+    bool sair=false;
     int esc;
-    printf("Escolha o tipo de conversão que deseja fazer: \n");
+    do{
+    printf("Escolha o tipo de conversao que deseja fazer: \n");
     printf("[1] para conversao de volume\n");
     printf("[2] para conversao de comprimento\n");
     printf("[3] para conversao de área\n");
     printf("[4] para conversao de temperatura\n");  
     printf("[5] para conversao de \n");
+    printf("[11] para sair. \n");
 
     scanf("%d",&esc);
     switch(esc){
     case 1:
-    volume();
-    break;
+        volume();
+        break;
 
     case 2:
-    comprimento();
-    break;
+        comprimento();
+        break;
 
     case 3:
-        temperature();
+        area();
         break;
 
     case 4:
-    
-    break;
+        temperature();
+        break;
     
     case 5:
     
     break;
     
-    case 6:
-    
-    break;
+    case 11:
+        sair=true;
+        break;
 
     default:
         printf("Escolha invalida.\n");
         break;
     }
-
+    }while(sair!=true);
  return 0;
 }
 

@@ -16,8 +16,9 @@ int main(){
     printf("Escolha o tipo de conversão que deseja fazer: \n");
     printf("[1] para conversao de volume\n");
     printf("[2] para conversao de comprimento\n");
-    printf("[3] para conversao de temperatura\n");
-    printf("[4] para conversao de \n");
+    printf("[3] para conversao de área\n");
+    printf("[4] para conversao de temperatura\n");  
+    printf("[5] para conversao de \n");
 
     scanf("%d",&esc);
     switch(esc){
@@ -150,4 +151,66 @@ void temperature() {
                 printf("Escolha invalida, digit um número de 0 a 6.\n\n");
         }
     }
+}
+void area(){
+    int in, out, dif, s;
+    unsigned int multi;
+    float valor, conv;
+        do{ // Adição de laço de repetição.
+            do{ // Laço para valores inválidos.
+                printf("\nEscolha a unidade de área de entrada:");
+                printf("\n[1] km²");
+                printf("\n[2] hm²");
+                printf("\n[3] dam²");
+                printf("\n[4] m²");
+                printf("\n[5] dm²");
+                printf("\n[6] cm²");
+                printf("\n[7] mm²\n");
+                scanf("\n%d", &in);
+                if (in<1||in>7){
+                    printf("Opção inválida!\n"); // Notificação para valores invalidos
+                }                
+            } while (in<1||in>7); 
+
+            printf("Insira o valor de entrada:\n");
+            scanf("\n%f", &valor);
+            do{ // Laço para valores inválidos.
+                printf("\nEscolha a unidade de área de saída:");
+                printf("\n[1] km²");
+                printf("\n[2] hm²");
+                printf("\n[3] dam²");
+                printf("\n[4] m²");
+                printf("\n[5] dm²");
+                printf("\n[6] cm²");
+                printf("\n[7] mm²\n");
+                scanf("%d", &out);
+                if (out<0||out>7){ // Notificação para valores invalidos
+                    printf("Opção inválida!\n");
+                }               
+            } while (out<1||out>7);
+            dif = in-out;
+            multi = pow(100,fabs(dif)); // Exclusão da variável conv para reduzir quantidade de variável.
+                if (dif<0){   
+                    printf("O valor convertido é %.4e\n.", valor*multi); // Alteração do formato para notação científica.        
+                }
+                if (dif>0){
+                    printf("O valor convertido é %.4e\n.", valor/multi);
+                }
+                if (dif==0){
+                    printf("O valor é %f\n.", valor*multi);
+                }
+                do{ // Laço para valores inválidos.
+                    printf("Deseja realizar outra operação de conversão para área?\n");
+                    printf("[1] Sim\n");
+                    printf("[2] Não\n");
+                    scanf("%d", &s);
+                    if (s<1||s>2){ // Notificação para valores invalidos
+                        printf("Opção inválida!\n");
+                    }       
+                } while (s<1||s>2);
+        } while (s==1);
+  
+        printf("Entre com qualquer tecla para retornar.\n"); // Adição de saída para melhorar interface.
+        getchar();
+        getchar();
 }

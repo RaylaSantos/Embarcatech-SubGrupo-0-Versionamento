@@ -3,12 +3,7 @@
 #include <stdbool.h>
 
 void comprimento();
-float celsios_to_fahrenheit(float temperature);
-float celsios_to_kelvin(float temperature);
-float fahrenheit_to_celsios(float temperature);
-float fahrenheit_to_kelvin(float temperature);
-float kelvin_to_celsios(float temperature);
-float kelvin_to_fahrenheit(float temperature);
+void temperature();
 
 int volume(){
    //codigo
@@ -22,7 +17,8 @@ int main(){
     printf("[1] para conversao de volume\n");
     printf("[2] para conversao de comprimento\n");
     printf("[3] para conversao de área\n");
-    printf("[4] para conversao de \n");
+    printf("[4] para conversao de temperatura\n");  
+    printf("[5] para conversao de \n");
 
     scanf("%d",&esc);
     switch(esc){
@@ -35,9 +31,9 @@ int main(){
     break;
 
     case 3:
-    
-    break;
-    
+        temperature();
+        break;
+
     case 4:
     
     break;
@@ -100,36 +96,62 @@ void comprimento(){
     }while(repete==true);
 }
 
-// Converte de Celsios para Fahrenheit
-float celsios_to_fahrenheit(float temperature) {
-    return (temperature * 1.8) + 32;
-}
+// Função para o usuário escolher qual unidade de temperatura ele quer converter.
+void temperature() {
+    int choice = 1;
+    float temperature;
 
-// Converte de Celsios para Kelvin
-float celsios_to_kelvin(float temperature) {
-    return temperature + 273.15;
-}
+    while(choice != 0) {
+        printf("\nESCOLHA QUAL CONVERSAO DE TEMPERATURA VOCE QUER FAZER\n\n");
+        printf("CELSIUS PARA FAHRENHEIT            [1]\n");
+        printf("CELSIUS PARA KELVIN                [2]\n");
+        printf("FAHRENHEIT PARA CELSIUS            [3]\n");
+        printf("FAHRENHEIT PARA KELVIN             [4]\n");
+        printf("KELVIN PARA CELSIUS                [5]\n");
+        printf("KELVIN PARA FAHRENHEIT             [6]\n");
+        printf("SAIR DO CONVERSOR DE TEMPERATURA   [0]\n\n");
 
-// Converte de Farenheit para Celsios
-float fahrenheit_to_celsios(float temperature) {
-    return (temperature - 32) / 1.8;
-}
+        printf("DIGITE SUA ESCOLHA: ");
+        scanf("%d", &choice);
 
-// Converte de Fahrenheit para Kelvin
-float fahrenheit_to_kelvin(float temperature) {
-    return ((temperature - 32) / 1.8) + 273.15;
+        switch(choice) {
+            case 1:
+                printf("DIGITE A TEMPERATURA EM CELSIUS: ");
+                scanf("%f", &temperature);
+                printf("%.2f C EM FARENHEIT E %.2f F\n", temperature, (temperature * 1.8) + 32);
+                break;
+            case 2:
+                printf("DIGITE A TEMPERATURA EM CELSIUS: ");
+                scanf("%f", &temperature);
+                printf("%.2f C EM KELVIN E %.2f K\n", temperature, temperature + 273.15);
+                break;
+            case 3:
+                printf("DIGITE A TEMPERATURA EM FARENHEIT: ");
+                scanf("%f", &temperature);
+                printf("%.2f F EM CELSIUS E %.2f C\n", temperature, (temperature - 32) / 1.8);
+                break;
+            case 4:
+                printf("DIGITE A TEMPERATURA EM FARENHEIT: ");
+                scanf("%f", &temperature);
+                printf("%.2f F EM KELVIN E %.2f K\n", temperature, ((temperature - 32) / 1.8) + 273.15);
+                break;
+            case 5:
+                printf("DIGITE A TEMPERATURA EM KELVIN: ");
+                scanf("%f", &temperature);
+                printf("%.2f K EM CELSIUS E %.2f C\n", temperature, temperature - 273.15);
+                break;
+            case 6:
+                printf("DIGITE A TEMPERATURA EM KELVIN: ");
+                scanf("%f", &temperature);
+                printf("%.2f K EM FRENHEIT E %.2f F\n", temperature, ((temperature - 273.15) * 1.8) + 32);
+                break;
+            case 0:
+                return;
+            default:
+                printf("Escolha invalida, digit um número de 0 a 6.\n\n");
+        }
+    }
 }
-
-// Converte de Kelvin para Celsios
-float kelvin_to_celsios(float temperature) {
-    return temperature - 273.15;
-}
-
-// Converte de Kelvin para Fahrenheit
-float kelvin_to_fahrenheit(float temperature) {
-    return ((temperature - 273.15) * 1.8) + 32;
-}
-
 void area(){
     int in, out, dif, s;
     unsigned int multi;

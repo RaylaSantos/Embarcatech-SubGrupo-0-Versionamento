@@ -41,8 +41,8 @@ int main(){
         break;
     
     case 5:
-    
-    break;
+        tempo();
+        break;
     
     case 11:
         sair=true;

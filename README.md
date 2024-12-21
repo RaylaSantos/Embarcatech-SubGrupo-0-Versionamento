@@ -13,7 +13,8 @@ Ao executar o programa, o usuário pode escolher o tipo de conversão desejada p
 2. Conversão de Comprimento
 3. Conversão de Área
 4. Conversão de Temperatura
-5. Outra funcionalidade (em desenvolvimento)
+5. Conversão de Tempo
+6. Outra funcionalidade (em desenvolvimento)
 11. Sair
 
 O menu principal é exibido continuamente até que o usuário escolha a opção de sair.
@@ -22,7 +23,11 @@ O menu principal é exibido continuamente até que o usuário escolha a opção 
 
 ## Conversões Disponíveis
 
-### 1. Comprimento
+### 1. Volume
+Esta funcionalidade está reservada para futuras implementações.
+
+---
+### 2. Comprimento
 Converte entre diferentes unidades de comprimento:
 
 - **Entrada e Saída:**
@@ -33,20 +38,6 @@ Converte entre diferentes unidades de comprimento:
 
 - **Exemplo de uso:**
   - Inserir valor em metros e converter para quilômetros, centímetros ou milímetros.
-
-### 2. Temperatura
-Converte entre diferentes escalas de temperatura:
-
-- **Opções:**
-  - Celsius (C) para Fahrenheit (F)
-  - Celsius (C) para Kelvin (K)
-  - Fahrenheit (F) para Celsius (C)
-  - Fahrenheit (F) para Kelvin (K)
-  - Kelvin (K) para Celsius (C)
-  - Kelvin (K) para Fahrenheit (F)
-
-- **Exemplo de uso:**
-  - Inserir temperatura em Celsius e converter para Kelvin.
 
 ### 3. Área
 Converte entre diferentes unidades de área:
@@ -63,10 +54,31 @@ Converte entre diferentes unidades de área:
 - **Exemplo de uso:**
   - Inserir área em metros quadrados e converter para centímetros quadrados.
 
-### 4. Volume
-Esta funcionalidade está reservada para futuras implementações.
+### 4. Temperatura
+Converte entre diferentes escalas de temperatura:
 
----
+- **Opções:**
+  - Celsius (C) para Fahrenheit (F)
+  - Celsius (C) para Kelvin (K)
+  - Fahrenheit (F) para Celsius (C)
+  - Fahrenheit (F) para Kelvin (K)
+  - Kelvin (K) para Celsius (C)
+  - Kelvin (K) para Fahrenheit (F)
+
+- **Exemplo de uso:**
+  - Inserir temperatura em Celsius e converter para Kelvin.
+
+### . Tempo
+Converte entre diferentes unidades de medida de tempo:
+
+- **Opções:**
+  - Segundos
+  - Minutos
+  - Hora
+  - Dia
+  
+- **Exemplo de uso:**
+  - Inserir unidade de entrada minutos e converter para segundos.
 
 ## Como Usar
 1. Compile o programa com um compilador C, por exemplo:
@@ -78,17 +90,6 @@ Esta funcionalidade está reservada para futuras implementações.
    ./conversor
    ```
 3. Escolha o tipo de conversão desejada e siga as instruções exibidas no terminal.
-
----
-
-## Estrutura do Código
-
-- **`main()`**: Contém o loop principal e o menu interativo.
-- **Funções auxiliares:**
-  - `comprimento()`: Gerencia as conversões de comprimento.
-  - `temperature()`: Gerencia as conversões de temperatura.
-  - `area()`: Gerencia as conversões de área.
-  - `volume()`: Placeholder para futuras funcionalidades.
 
 ---
 

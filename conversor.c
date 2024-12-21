@@ -458,4 +458,23 @@ void tempo() {
     scanf("%d", &unidadeSaida);
 
     switch (unidadeEntrada) {
-    
+     case 1: 
+        case 1: 
+        switch (unidadeSaida) {
+        case 1: 
+            convertido = valor;
+            break;
+        case 2: 
+            convertido = valor / 60.0;
+            break;
+        case 3: 
+            convertido = valor / 3600.0;
+            break;
+        case 4: // Para dias
+            convertido = valor / 86400.0;
+            break;
+        default:
+            printf("Unidade de saída inválida.\n");
+            return;
+        }
+        break;

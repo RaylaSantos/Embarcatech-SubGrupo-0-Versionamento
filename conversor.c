@@ -18,15 +18,10 @@ int main(){
     printf("Escolha o tipo de conversao que deseja fazer: \n");
     printf("[1] para conversao de volume\n");
     printf("[2] para conversao de comprimento\n");
-<<<<<<< Updated upstream
-    printf("[3] para conversao de \n");
-    printf("[4] para conversao de \n");
-=======
     printf("[3] para conversao de área\n");
     printf("[4] para conversao de temperatura\n");  
     printf("[5] para conversao de tempo\n");
     printf("[11] para sair. \n");
->>>>>>> Stashed changes
 
     scanf("%d",&esc);
     switch(esc){
@@ -39,9 +34,9 @@ int main(){
         break;
 
     case 3:
-    
-    break;
-    
+        area();
+        break;
+
     case 4:
         temperature();
         break;
@@ -211,8 +206,6 @@ void comprimento(){
         break;
     }
     }while(repete==true);
-<<<<<<< Updated upstream
-=======
 }
 
 // Função para o usuário escolher qual unidade de temperatura ele quer converter.
@@ -552,5 +545,4 @@ void tempo() {
     }
 
     printf("O valor foiconvertido para: %.2f\n", convertido);
->>>>>>> Stashed changes
 }

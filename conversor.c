@@ -456,3 +456,6 @@ void tempo() {
     printf("[3] para horas\n");
     printf("[4] para dias\n");
     scanf("%d", &unidadeSaida);
+
+    switch (unidadeEntrada) {
+    

@@ -437,3 +437,5 @@ void volume(){
     
 }
 void tempo() {
+    int unidadeEntrada, unidadeSaida;
+    float valor, convertido;

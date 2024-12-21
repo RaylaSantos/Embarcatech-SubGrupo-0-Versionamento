@@ -439,3 +439,11 @@ void volume(){
 void tempo() {
     int unidadeEntrada, unidadeSaida;
     float valor, convertido;
+
+    printf("Selecione a unidade de tempo de entrada:\n");
+    printf("[1] para segundos\n");
+    printf("[2] para minutos\n");
+    printf("[3] para horas\n");
+    printf("[4] para dias\n");
+    scanf("%d", &unidadeEntrada);
+    

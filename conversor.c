@@ -446,4 +446,13 @@ void tempo() {
     printf("[3] para horas\n");
     printf("[4] para dias\n");
     scanf("%d", &unidadeEntrada);
-    
+
+    printf("Digite o valor do tempo:\n");
+    scanf("%f", &valor);
+
+    printf("Selecione a unidade de tempo de saída:\n");
+    printf("[1] para segundos\n");
+    printf("[2] para minutos\n");
+    printf("[3] para horas\n");
+    printf("[4] para dias\n");
+    scanf("%d", &unidadeSaida);

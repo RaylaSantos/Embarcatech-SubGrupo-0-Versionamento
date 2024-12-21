@@ -458,8 +458,7 @@ void tempo() {
     scanf("%d", &unidadeSaida);
 
     switch (unidadeEntrada) {
-     case 1: 
-        case 1: 
+       case 1: 
         switch (unidadeSaida) {
         case 1: 
             convertido = valor;
@@ -470,7 +469,7 @@ void tempo() {
         case 3: 
             convertido = valor / 3600.0;
             break;
-        case 4: // Para dias
+        case 4: 
             convertido = valor / 86400.0;
             break;
         default:
@@ -478,3 +477,68 @@ void tempo() {
             return;
         }
         break;
+
+    case 2: 
+        switch (unidadeSaida) {
+        case 1: 
+            convertido = valor * 60.0;
+            break;
+        case 2: 
+            convertido = valor;
+            break;
+        case 3: 
+            convertido = valor / 60.0;
+            break;
+        case 4: 
+            convertido = valor / 1440.0;
+            break;
+        default:
+            printf("Unidade de saída inválida.\n");
+            return;
+        }
+        break;
+
+    case 3: 
+        switch (unidadeSaida) {
+        case 1: 
+            convertido = valor * 3600.0;
+            break;
+        case 2: 
+            convertido = valor * 60.0;
+            break;
+        case 3: 
+            convertido = valor;
+            break;
+        case 4: 
+            convertido = valor / 24.0;
+            break;
+        default:
+            printf("Unidade de saída inválida.\n");
+            return;
+        }
+        break;
+
+    case 4: 
+        switch (unidadeSaida) {
+        case 1: 
+            convertido = valor * 86400.0;
+            break;
+        case 2: 
+            convertido = valor * 1440.0;
+            break;
+        case 3: 
+            convertido = valor * 24.0;
+            break;
+        case 4: 
+            convertido = valor;
+            break;
+        default:
+            printf("Unidade de saída inválida.\n");
+            return;
+        }
+        break;
+
+    default:
+        printf("Unidade de entrada inválida.\n");
+        return;
+    }

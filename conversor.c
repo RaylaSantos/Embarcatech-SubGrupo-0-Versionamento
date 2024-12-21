@@ -542,3 +542,6 @@ void tempo() {
         printf("Unidade de entrada inválida.\n");
         return;
     }
+
+    printf("O valor convertido é: %.2f\n", convertido);
+}

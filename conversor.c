@@ -8,6 +8,7 @@ void comprimento();
 void temperature();
 void area();
 void volume();
+void tempo();
 
 int main(){
     bool sair=false;

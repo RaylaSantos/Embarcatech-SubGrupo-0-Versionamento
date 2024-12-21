@@ -433,10 +433,7 @@ void volume(){
 
     default:
         break;
-    }
-
-
-   
-   
+    } 
     
 }
+void tempo() {

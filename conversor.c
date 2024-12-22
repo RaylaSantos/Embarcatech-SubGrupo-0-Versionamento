@@ -51,9 +51,52 @@ int main()
 
 void comprimento()
 {
+    double n;
+    /*
+    const char *unidades[] = {"Quilometro[km]", "Metro[m]", "Centimetro[cm]", "Milimetro[mm]", "Polegada[pol]"};
+    const double fator[5][5] = {
+        {1, 1000, 100000, 1000000, 39370.08},
+        {0.001, 1, 100, 1000, 39.37},
+        {0.00001, 0.01, 1, 10, 0.3937},
+        {0.000001, 0.001, 0.1, 1, 0.03937},
+        {0.0000254, 0.0254, 2.54, 25.4, 1}};
+    int unidEntrada, unidSaida;
+    printf("\n========== Conversao de comprimento ===========\n");
+    printf("Qual unidade deseja converter? \n");
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("[%d] %s\n", i, unidades[i]);
+    }
+    printf("[>=6] Retornar ao menu principal...\n");
+    scanf("%lf", &unidEntrada);
+    if (unidEntrada >= 6 || unidEntrada < 0)
+    {
+        printf("Saindo de conversao de comprimento...\n\n");
+        return;
+    }
+    printf("Entre com um valor em para ser convertido: ");
+    scanf("%lf", &n);
+    fflush(stdin);
+    printf("Para qual unidade deseja converter? \n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("[%d] %s\n", i, unidades[i]);
+    }
+    printf("[>=6] Retornar ao menu principal...\n");
+    scanf("%lf", &unidSaida);
+    fflush(stdin);
+    if (unidSaida >= 6 || unidSaida < 0)
+    {
+        printf("Saindo de conversao de comprimento...\n\n");
+        return;
+    }
+
+    */
+
     int escolha, escolha2;
     bool repete = true;
-    double n;
+
     do
     {
         printf("\n========== Conversao de comprimento ===========\n");
@@ -62,10 +105,10 @@ void comprimento()
         printf("[2] Metro [m] \n");
         printf("[3] Centimetro [cm]\n");
         printf("[4] Milimetro [mm]\n");
-        printf("[>=5] Retornar ao menu principal...\n");
+        printf("[>=6] Retornar ao menu principal...\n");
         scanf("%d", &escolha2);
         fflush(stdin);
-        if (escolha2 >= 5 || escolha2 < 1)
+        if (escolha2 >= 6 || escolha2 < 1)
         {
             printf("Saindo de conversao de comprimento...\n\n");
             return;
@@ -78,10 +121,10 @@ void comprimento()
         printf("[2] Metro [m]\n");
         printf("[3] Centimetro [cm]\n");
         printf("[4] Milimetro [mm]\n");
-        printf("[>=5] Retornar ao menu principal...\n");
+        printf("[>=6] Retornar ao menu principal...\n");
         scanf("%d", &escolha);
         fflush(stdin);
-        if (escolha >= 5 || escolha < 1)
+        if (escolha >= 6 || escolha < 1)
         {
             printf("Saindo de conversao de comprimento...\n\n");
             return;
@@ -585,7 +628,8 @@ int menu()
     printf("[5] para conversao de tempo\n");
     printf("[11] para sair. \n");
     scanf("%d", &esc);
-    if(esc==1){
+    if (esc == 1)
+    {
         printf("\n*Saindo do aplicativo...\n\n");
     }
     return esc;

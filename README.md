@@ -1,6 +1,6 @@
 # Conversor de Unidades
 
-Este programa em C permite realizar conversões entre diferentes unidades de medida. As unidades cobertas incluem volume, comprimento, área e temperatura.
+Este programa em C permite realizar conversões entre diferentes unidades de medida. As unidades cobertas incluem volume, comprimento, área, temperatura e tempo.
 
 ---
 
@@ -14,7 +14,6 @@ Ao executar o programa, o usuário pode escolher o tipo de conversão desejada p
 3. Conversão de Área
 4. Conversão de Temperatura
 5. Conversão de Tempo
-6. Outra funcionalidade (em desenvolvimento)
 11. Sair
 
 O menu principal é exibido continuamente até que o usuário escolha a opção de sair.
@@ -24,7 +23,16 @@ O menu principal é exibido continuamente até que o usuário escolha a opção 
 ## Conversões Disponíveis
 
 ### 1. Volume
-Esta funcionalidade está reservada para futuras implementações.
+Converte entre diferentes unidades de volume:
+
+- **Unidades Suportadas:**
+  - Metro cúbico (m³)
+  - Decímetro cúbico (dm³)
+  - Centímetro cúbico (cm³)
+  - Milímetro cúbico (mm³)
+
+- **Exemplo de uso:**
+  - Inserir valor em metros cúbicos e converter para decímetros cúbicos.
 
 ---
 ### 2. Comprimento
@@ -35,9 +43,10 @@ Converte entre diferentes unidades de comprimento:
   - Metro (m)
   - Centímetro (cm)
   - Milímetro (mm)
+  - Polegada (pol)
 
 - **Exemplo de uso:**
-  - Inserir valor em metros e converter para quilômetros, centímetros ou milímetros.
+  - Inserir valor em metros e converter para quilômetros, centímetros ou polegadas.
 
 ### 3. Área
 Converte entre diferentes unidades de área:
@@ -68,17 +77,19 @@ Converte entre diferentes escalas de temperatura:
 - **Exemplo de uso:**
   - Inserir temperatura em Celsius e converter para Kelvin.
 
-### . Tempo
+### 5. Tempo
 Converte entre diferentes unidades de medida de tempo:
 
 - **Opções:**
   - Segundos
   - Minutos
-  - Hora
-  - Dia
-  
+  - Horas
+  - Dias
+
 - **Exemplo de uso:**
-  - Inserir unidade de entrada minutos e converter para segundos.
+  - Inserir valor em minutos e converter para segundos.
+
+---
 
 ## Como Usar
 1. Compile o programa com um compilador C, por exemplo:

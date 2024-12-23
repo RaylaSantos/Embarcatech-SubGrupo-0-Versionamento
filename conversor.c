@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 int menu();
+int decimais(double n);
 void volume();
 void comprimento();
 void area();
@@ -59,7 +60,7 @@ void comprimento()
         {0.00001, 0.01, 1, 10, 0.3937},
         {0.000001, 0.001, 0.1, 1, 0.03937},
         {0.0000254, 0.0254, 2.54, 25.4, 1}};
-    int unidEntrada=0, unidSaida=0;
+    int unidEntrada = 0, unidSaida = 0;
     printf("\n========== Conversao de comprimento ===========\n");
     printf("Qual unidade deseja converter? \n");
     int i;
@@ -90,14 +91,14 @@ void comprimento()
         printf("Saindo de conversao de comprimento...\n\n");
         return;
     }
-
+    int precisao=decimais(n*fator[unidEntrada][unidSaida]);
     if (unidEntrada == unidSaida)
     {
         printf("\n\nUnidades de entrada e saidas iguais. Valor: %.1lf %s\n\n", n, unidades[unidEntrada]);
     }
     else
     {
-        printf("\n\n%.1lf %s --> %.6lf %s\n\n\n", n, unidades[unidEntrada], (n * fator[unidEntrada][unidSaida]), unidades[unidSaida]);
+        printf("\n\n%.1lf %s --> %.*f %s\n", n, unidades[unidEntrada], precisao,(n * fator[unidEntrada][unidSaida]), unidades[unidSaida]);
     }
 };
 // Função para o usuário escolher qual unidade de temperatura ele quer converter.
@@ -470,9 +471,19 @@ int menu()
     printf("[5] para conversao de tempo\n");
     printf("[11] para sair. \n");
     scanf("%d", &esc);
-    if (esc == 1)
+    if (esc == 11)
     {
         printf("\n*Saindo do aplicativo...\n\n");
     }
     return esc;
+}
+int decimais(double n)
+{
+    int precisao = 0;
+    while (fabs(n - round(n)) > 1e-9&&precisao<10)
+    {
+        n *= 10;
+        precisao++;
+    }
+    return precisao;
 }

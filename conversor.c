@@ -52,7 +52,6 @@ int main()
 void comprimento()
 {
     double n;
-    /*
     const char *unidades[] = {"Quilometro[km]", "Metro[m]", "Centimetro[cm]", "Milimetro[mm]", "Polegada[pol]"};
     const double fator[5][5] = {
         {1, 1000, 100000, 1000000, 39370.08},
@@ -60,7 +59,7 @@ void comprimento()
         {0.00001, 0.01, 1, 10, 0.3937},
         {0.000001, 0.001, 0.1, 1, 0.03937},
         {0.0000254, 0.0254, 2.54, 25.4, 1}};
-    int unidEntrada, unidSaida;
+    int unidEntrada=0, unidSaida=0;
     printf("\n========== Conversao de comprimento ===========\n");
     printf("Qual unidade deseja converter? \n");
     int i;
@@ -69,7 +68,7 @@ void comprimento()
         printf("[%d] %s\n", i, unidades[i]);
     }
     printf("[>=6] Retornar ao menu principal...\n");
-    scanf("%lf", &unidEntrada);
+    scanf("%d", &unidEntrada);
     if (unidEntrada >= 6 || unidEntrada < 0)
     {
         printf("Saindo de conversao de comprimento...\n\n");
@@ -84,7 +83,7 @@ void comprimento()
         printf("[%d] %s\n", i, unidades[i]);
     }
     printf("[>=6] Retornar ao menu principal...\n");
-    scanf("%lf", &unidSaida);
+    scanf("%d", &unidSaida);
     fflush(stdin);
     if (unidSaida >= 6 || unidSaida < 0)
     {
@@ -92,172 +91,15 @@ void comprimento()
         return;
     }
 
-    */
-
-    int escolha, escolha2;
-    bool repete = true;
-
-    do
+    if (unidEntrada == unidSaida)
     {
-        printf("\n========== Conversao de comprimento ===========\n");
-        printf("Qual unidade deseja converter? \n");
-        printf("[1] Quilometro [km]\n");
-        printf("[2] Metro [m] \n");
-        printf("[3] Centimetro [cm]\n");
-        printf("[4] Milimetro [mm]\n");
-        printf("[>=6] Retornar ao menu principal...\n");
-        scanf("%d", &escolha2);
-        fflush(stdin);
-        if (escolha2 >= 6 || escolha2 < 1)
-        {
-            printf("Saindo de conversao de comprimento...\n\n");
-            return;
-        }
-        printf("Entre com um valor em para ser convertido: ");
-        scanf("%lf", &n);
-        fflush(stdin);
-        printf("Para qual unidade deseja converter? \n");
-        printf("[1] Quilometro [km]\n");
-        printf("[2] Metro [m]\n");
-        printf("[3] Centimetro [cm]\n");
-        printf("[4] Milimetro [mm]\n");
-        printf("[>=6] Retornar ao menu principal...\n");
-        scanf("%d", &escolha);
-        fflush(stdin);
-        if (escolha >= 6 || escolha < 1)
-        {
-            printf("Saindo de conversao de comprimento...\n\n");
-            return;
-        }
-        switch (escolha2)
-        {
-        case 1: // Quilometro
-            switch (escolha)
-            {
-            case 1:
-                printf("Unidade de saida igual a unidade de entrada\n");
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 2:
-                printf("%.1lfkm em m: %.1lf\n", n, n * 1000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 3:
-                printf("%.1lfkm eh igual a %.1lfcm\n", n, n * 100000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 4:
-                printf("%.1lfkm eh igual a %.1lfmm\n", n, n * 1000000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            default:
-                printf("Saindo...\n");
-                repete = false;
-                break;
-            }
-            break;
-
-        case 2: // Metro
-            switch (escolha)
-            {
-            case 1:
-                printf("%.1lfm eh igual a %.3lfm\n", n, n / 1000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 2:
-                printf("Unidade de saida igual a unidade de entrada\n");
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 3:
-                printf("%.1lfm eh igual a %.1lfcm\n", n, n * 100);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 4:
-                printf("%.1lfm eh igual a %.1lfmm\n", n, n * 1000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            default:
-                printf("Saindo...\n");
-                repete = false;
-                break;
-            }
-            break;
-
-        case 3: // centimetro
-            switch (escolha)
-            {
-            case 1:
-                printf("%.1lfcm eh igual a %.8fkm\n", n, n / 100000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 2:
-                printf("%.1lfcm eh igual a %.3lfm\n", n, n / 100);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 3:
-                printf("Unidade de saida igual a unidade de entrada\n");
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 4:
-                printf("%.1lfcm eh igual a %.1lfmm\n", n, n * 10);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            default:
-                printf("Saindo...\n");
-                repete = false;
-                break;
-            }
-            break;
-
-        case 4: // milimetro
-            switch (escolha)
-            {
-            case 1:
-                printf("%.1lfcm eh igual a %.8lfkm\n", n, n / 1000000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 2:
-                printf("%.1lfcm eh igual a %.4lfm\n", n, n / 1000);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 3:
-                printf("%.1lfcm eh igual a %.2lfcm\n", n, n / 10);
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            case 4:
-                printf("Unidade de saida igual a unidade de entrada\n");
-                printf("Entre com qualquer tecla para retornar.\n");
-                getchar();
-                break;
-            default:
-                printf("Saindo...\n");
-                repete = false;
-                break;
-            }
-            break;
-        default:
-            printf("Escolha invalida...\n");
-
-            break;
-        }
-    } while (repete == true);
-}
-
+        printf("\n\nUnidades de entrada e saidas iguais. Valor: %.1lf %s\n\n", n, unidades[unidEntrada]);
+    }
+    else
+    {
+        printf("\n\n%.1lf %s --> %.6lf %s\n\n\n", n, unidades[unidEntrada], (n * fator[unidEntrada][unidSaida]), unidades[unidSaida]);
+    }
+};
 // Função para o usuário escolher qual unidade de temperatura ele quer converter.
 void temperature()
 {

@@ -89,6 +89,33 @@ Converte entre diferentes unidades de medida de tempo:
 - **Exemplo de uso:**
   - Inserir valor em minutos e converter para segundos.
 
+### 6. Unidade de medida de armazenamento
+Converte entre diferentes unidades de medida de armazenamento:
+
+**Opções:**
+
+| Número | Opção |
+|--------|-------|
+| 0      | Bit   |
+| 1      | Byte  |
+| 2      | KB    |
+| 3      | MB    |
+| 4      | GB    |
+
+Cada unidade está definida da seguinte forma:
+
+| Unidade | Definição           |
+|---------|---------------------|
+| bit     | Unidade básica de dados |
+| byte    | 1 byte = 8 bits     |
+| KB      | 1 KB = 1.000 bytes  |
+| MB      | 1 MB = 1.000 KB     |
+| GB      | 1 GB = 1.000 MB     |
+
+
+**Exemplo de uso**
+  - Converter 1000 bits em KB
+
 ---
 
 ## Como Usar

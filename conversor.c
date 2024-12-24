@@ -490,36 +490,36 @@ void conversaoBytes()
     scanf("%lf", &valor);
 
     printf("Selecione a unidade de entrada:\n");
-    for (int i = 0; i < num_unidades; i++)
+    for (int i = 1; i <= num_unidades; i++)
     {
-        printf("[%d] %s\n", i, unidades[i]);
+        printf("[%d] %s\n", i, unidades[i-1]);
     }
     printf("Escolha: ");
     scanf("%d", &unidEntrada);
 
-    if (unidEntrada < 0 || unidEntrada >= num_unidades)
+    if (unidEntrada < 1 || unidEntrada > num_unidades)
     {
         printf("Unidade de entrada inválida.\n");
         return;
     }
 
     printf("Selecione a unidade de saída:\n");
-    for (int i = 0; i < num_unidades; i++)
+    for (int i = 1; i <= num_unidades; i++)
     {
         if (i != unidEntrada)
-            printf("[%d] %s\n", i, unidades[i]);
+            printf("[%d] %s\n", i, unidades[i-1]);
     }
     printf("Escolha: ");
     scanf("%d", &unidSaida);
 
-    if (unidSaida < 0 || unidSaida >= num_unidades)
+    if (unidSaida < 1 || unidSaida > num_unidades)
     {
         printf("Unidade de saída inválida.\n");
         return;
     }
 
-    double resultado = valor * fator[unidEntrada][unidSaida];
-    printf("%.2lf %s = %.2f %s\n", valor, unidades[unidEntrada], resultado, unidades[unidSaida]);
+    double resultado = valor * fator[unidEntrada-1][unidSaida-1];
+    printf("%.2lf %s = %.2f %s\n", valor, unidades[unidEntrada-1], resultado, unidades[unidSaida-1]);
 }
 
 int menu()

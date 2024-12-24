@@ -101,6 +101,7 @@ Converte entre diferentes unidades de medida de armazenamento:
 | 2      | KB    |
 | 3      | MB    |
 | 4      | GB    |
+| 5      | TB    |
 
 Cada unidade está definida da seguinte forma:
 
@@ -111,7 +112,7 @@ Cada unidade está definida da seguinte forma:
 | KB      | 1 KB = 1.000 bytes  |
 | MB      | 1 MB = 1.000 KB     |
 | GB      | 1 GB = 1.000 MB     |
-
+| TB      | 1 TB = 1.000 GB               |
 
 **Exemplo de uso**
   - Converter 1000 bits em KB

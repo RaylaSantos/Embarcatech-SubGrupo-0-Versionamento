@@ -471,35 +471,40 @@ void conversaoBytes()
     // TODO: Implementar a conversão de unidades de dados em um arquivo separado
     double valor;
     int unidEntrada = 0, unidSaida = 0;
-    const char *unidades[] = {"bit", "byte", "kb", "mb", "gb"};
-    const double fator[5][5] = {
-        {1, 0.125, 0.000125, 0.000000125, 0.000000000125},
-        {8, 1, 0.001, 0.000001, 0.000000001},
-        {8000, 1000, 1, 0.001, 0.000001},
-        {8000000, 1000000, 1000, 1, 0.001},
-        {8000000000, 1000000000, 1000000, 1000, 1}
+    const char *unidades[] = {"bit", "byte", "KB", "MB", "GB", "TB"};
+    const int num_unidades = 6;
+
+    const double fator[6][6] = {
+                // bit        byte               KB               MB                  GB                        TB
+
+    /* bit */    {1,         0.125,           0.000125,          0.000000125,         0.000000000125,         0.000000000000125},
+    /* byte */   {8,         1,               0.001,              0.000001,            0.000000001,            0.000000000001},
+    /* kb */     {8000,      1000,            1,                  0.001,               0.000001,               0.000000001},
+    /* MB */     {8000000,   1000000,         1000,               1,                   0.001,                   0.000001},
+    /* GB */     {8000000000,1000000000,      1000000,            1000,                1,                       0.001},
+    /* TB */     {8000000000000,1000000000000,1000000000,         1000000,             1000,                    1}
     };
 
-    printf("\n========== Conversão de Unidades de Dados ==========\n");
+    printf("\n========== Conversao de Unidades de Dados ==========\n");
     printf("Digite o valor a ser convertido: ");
     scanf("%lf", &valor);
 
     printf("Selecione a unidade de entrada:\n");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < num_unidades; i++)
     {
         printf("[%d] %s\n", i, unidades[i]);
     }
     printf("Escolha: ");
     scanf("%d", &unidEntrada);
 
-    if (unidEntrada < 0 || unidEntrada >= 5)
+    if (unidEntrada < 0 || unidEntrada >= num_unidades)
     {
         printf("Unidade de entrada inválida.\n");
         return;
     }
 
     printf("Selecione a unidade de saída:\n");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < num_unidades; i++)
     {
         if (i != unidEntrada)
             printf("[%d] %s\n", i, unidades[i]);
@@ -507,7 +512,7 @@ void conversaoBytes()
     printf("Escolha: ");
     scanf("%d", &unidSaida);
 
-    if (unidSaida < 0 || unidSaida >= 5)
+    if (unidSaida < 0 || unidSaida >= num_unidades)
     {
         printf("Unidade de saída inválida.\n");
         return;

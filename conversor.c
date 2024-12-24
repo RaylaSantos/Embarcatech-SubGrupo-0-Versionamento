@@ -10,6 +10,8 @@ void comprimento();
 void area();
 void temperature();
 void tempo();
+void conversaoBytes();
+
 
 int main()
 {
@@ -37,6 +39,10 @@ int main()
 
         case 5:
             tempo();
+            break;
+        
+        case 6:
+            conversaoBytes();
             break;
 
         case 11:
@@ -460,6 +466,57 @@ void tempo()
     printf("O valor foiconvertido para: %.2f\n", convertido);
 }
 
+void conversaoBytes()
+{
+    // TODO: Implementar a conversão de unidades de dados em um arquivo separado
+    double valor;
+    int unidEntrada = 0, unidSaida = 0;
+    const char *unidades[] = {"bit", "byte", "kb", "mb", "gb"};
+    const double fator[5][5] = {
+        {1, 0.125, 0.000125, 0.000000125, 0.000000000125},
+        {8, 1, 0.001, 0.000001, 0.000000001},
+        {8000, 1000, 1, 0.001, 0.000001},
+        {8000000, 1000000, 1000, 1, 0.001},
+        {8000000000, 1000000000, 1000000, 1000, 1}
+    };
+
+    printf("\n========== Conversão de Unidades de Dados ==========\n");
+    printf("Digite o valor a ser convertido: ");
+    scanf("%lf", &valor);
+
+    printf("Selecione a unidade de entrada:\n");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("[%d] %s\n", i, unidades[i]);
+    }
+    printf("Escolha: ");
+    scanf("%d", &unidEntrada);
+
+    if (unidEntrada < 0 || unidEntrada >= 5)
+    {
+        printf("Unidade de entrada inválida.\n");
+        return;
+    }
+
+    printf("Selecione a unidade de saída:\n");
+    for (int i = 0; i < 5; i++)
+    {
+        if (i != unidEntrada)
+            printf("[%d] %s\n", i, unidades[i]);
+    }
+    printf("Escolha: ");
+    scanf("%d", &unidSaida);
+
+    if (unidSaida < 0 || unidSaida >= 5)
+    {
+        printf("Unidade de saída inválida.\n");
+        return;
+    }
+
+    double resultado = valor * fator[unidEntrada][unidSaida];
+    printf("%.2lf %s = %.2f %s\n", valor, unidades[unidEntrada], resultado, unidades[unidSaida]);
+}
+
 int menu()
 {
     int esc;
@@ -469,6 +526,7 @@ int menu()
     printf("[3] para conversao de area\n");
     printf("[4] para conversao de temperatura\n");
     printf("[5] para conversao de tempo\n");
+    printf("[6] para conversao de unidade de dados (bytes)\n");
     printf("[11] para sair. \n");
     scanf("%d", &esc);
     if (esc == 11)

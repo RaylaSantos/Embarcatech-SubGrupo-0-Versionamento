@@ -11,7 +11,7 @@ void area();
 void temperature();
 void tempo();
 void conversaoBytes();
-
+void tempo();
 
 int main()
 {

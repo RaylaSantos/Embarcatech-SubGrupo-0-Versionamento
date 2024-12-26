@@ -12,6 +12,7 @@ void temperature();
 void tempo();
 void conversaoBytes();
 void tempo();
+void watts(); //aaaaaaaaaaaaagvsddhusjfkdvbjsjbkhvjds
 
 int main()
 {
@@ -54,6 +55,11 @@ int main()
         }
     } while (esc != 11);
     return 0;
+}
+
+void watts(){
+    //aaaaaaaaaaa
+    
 }
 
 void comprimento()

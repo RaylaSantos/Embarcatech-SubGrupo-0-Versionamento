@@ -14,6 +14,7 @@ Ao executar o programa, o usuário pode escolher o tipo de conversão desejada p
 3. Conversão de Área
 4. Conversão de Temperatura
 5. Conversão de Tempo
+6. conversão de Potencia
 11. Sair
 
 O menu principal é exibido continuamente até que o usuário escolha a opção de sair.

@@ -12,7 +12,7 @@ void temperature();
 void tempo();
 void conversaoBytes();
 void tempo();
-void watts(); //aaaaaaaaaaaaagvsddhusjfkdvbjsjbkhvjds
+void watts(); 
 
 int main()
 {
@@ -46,6 +46,10 @@ int main()
             conversaoBytes();
             break;
 
+        case 7:
+            watts();
+            break;
+
         case 11:
             break;
 
@@ -58,7 +62,6 @@ int main()
 }
 
 void watts(){
-    //aaaaaaaaaaa
     
 }
 

@@ -85,7 +85,7 @@ Converte entre diferentes unidades de medida de tempo:
   - Minutos
   - Horas
   - Dias
-  - 
+
 
 - **Exemplo de uso:**
   - Inserir valor em minutos e converter para segundos.

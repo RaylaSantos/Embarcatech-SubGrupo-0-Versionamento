@@ -119,6 +119,16 @@ Cada unidade está definida da seguinte forma:
 **Exemplo de uso**
   - Converter 1000 bits em KB
 
+### 7. Potencia 
+converte de watts para as unidades mais communs de potencia 
+
+- **Opções:**
+  - Kilowatts
+  - Megawatts
+  - Cavalo-Vapor
+
+- **Exemplo de uso:**
+  - Inserir potencia em watts e converter para cavalo-vapor.
 ---
 
 ## Como Usar

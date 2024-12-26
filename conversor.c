@@ -12,7 +12,7 @@ void temperature();
 void tempo();
 void conversaoBytes();
 void tempo();
-void watts(); //aaaaaaaaaaaaagvsddhusjfkdvbjsjbkhvjds
+void watts(); 
 
 int main()
 {
@@ -46,6 +46,10 @@ int main()
             conversaoBytes();
             break;
 
+        case 7:
+            watts();
+            break;
+
         case 11:
             break;
 
@@ -58,8 +62,59 @@ int main()
 }
 
 void watts(){
-    //aaaaaaaaaaa
+    float watts, resultado;
+    int opcao;
+
+    // Pergunta o valor em watts
+    printf("Digite o valor em watts: ");
     
+    while((scanf("%f", &watts)) == 0){
+    	while ((getchar()) != '\n'); // Limpa buffer de entrada
+		printf("[ERRO] digite apenas numeros");
+	}
+
+    // Pergunta para qual unidade de potência deseja converter
+    printf("Escolha a unidade para conversao:\n");
+    printf("1. Megawatts (MW)\n");
+    printf("2. Kilowatts (kW)\n");
+    printf("3. Cavalos-vapor (cv)\n");
+    printf("Digite a opcao (1, 2 ou 3): ");
+  	
+  	
+    while((scanf("%d", &opcao)) != 1 || opcao < 1 || opcao > 3){
+    	
+    	while ((getchar()) != '\n'); // Limpa buffer de entrada
+		printf("opcao invalida, digite apenas 1, 2 ou 3");
+	
+	}
+	
+ 	 while ((getchar()) != '\n'); // Limpa buffer de entrada
+ 	 	
+ 	 system("cls");// limpa a tela 
+ 	 	
+    // Realiza a conversão com base na opção escolhida
+    switch(opcao) {
+        case 1: // Megawatts
+            resultado = watts / 1e6;  // 1 MW = 1.000.000 W
+            printf("%.2f watts e igual a %.6f megawatts (MW).\n", watts, resultado);
+            break;
+        case 2: // Kilowatts
+            resultado = watts / 1000;  // 1 kW = 1.000 W
+            printf("%.2f watts e igual a %.3f kilowatts (kW).\n", watts, resultado);
+            break;
+        case 3: // Cavalos-vapor
+            resultado = watts / 745.7;  // 1 cv = 745.7 W
+            printf("%.2f watts e igual a %.3f cavalos-vapor (cv).\n", watts, resultado);
+            break;
+        default:
+            printf("Opcao invalida!\n");
+            break;
+    }
+    
+    printf("Precione qualquer teclar para sair:\n");
+	getchar();
+
+	  
 }
 
 void comprimento()
